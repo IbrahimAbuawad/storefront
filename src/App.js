@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 import Products from "./components/products/Products";
 import { Provider } from 'react-redux';
 import store from './Store/index';
+import Categories from "./components/categories/Categories";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Provider store={store()}>
         <Header />
         <br />
+       <Categories/>
         <Products />
         <br />
         <Footer />
