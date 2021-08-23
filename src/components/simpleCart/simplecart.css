@@ -1,0 +1,7 @@
+.Simplecart{
+    /* width:250px; */
+    position: fixed;
+    margin-left: 85% ;
+    background-color: rgba(208, 210, 238, 0.438);
+    border-radius: 25%;
+}

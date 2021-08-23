@@ -6,6 +6,7 @@ import Products from "./components/products/Products";
 import { Provider } from 'react-redux';
 import store from './Store/index';
 import Categories from "./components/categories/Categories";
+import SimpleCart from "./components/simpleCart/SimpleCart";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Provider store={store()}>
         <Header />
         <br />
+        <SimpleCart/>
        <Categories/>
         <Products />
         <br />
