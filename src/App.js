@@ -2,25 +2,35 @@
 
 import Header from "./components/header/Header.js";
 import Footer from "./components/footer/Footer";
-import Products from "./components/products/Products";
-import { Provider } from 'react-redux';
-import store from './Store/index';
-import Categories from "./components/categories/Categories";
-import SimpleCart from "./components/simpleCart/SimpleCart";
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AddToList from "./components/AddToList/AddToList.js";
+import Main from "./components/main/Main.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <>
-      <Provider store={store()}>
+      <Router>
         <Header />
-        <br />
-        <SimpleCart/>
-       <Categories/>
-        <Products />
-        <br />
+
+        <Switch>
+
+          <Route path="/addnew"  >
+            <AddToList />
+          </Route>
+
+          <Route path="/" >
+            <Main />
+          </Route>
+
+
+
+
+        </Switch>
         <Footer />
-      </Provider>
+
+      </Router>
+
     </>
   );
 }

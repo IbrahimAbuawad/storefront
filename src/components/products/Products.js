@@ -1,29 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Paper, Typography, Button, Grid, Card, CardHeader, CardContent, CardActions, CardMedia, Container } from '@material-ui/core'
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../../Store/actions/Cart_Act';
-
+import { getProduct } from '../../Store/actions/Product_Act'
 
 
 const ProductsViewer = () => {
     const dispatch = useDispatch()
 
     const state = useSelector(state => state)
+    useEffect(() => {
+
+        dispatch(getProduct())
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+    useEffect(() => {
+        dispatch(getProduct())
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [state.cart])
+
+
+    console.log('allProduct', state.products);
+
     return (
         <>
             <Container maxWidth='lg'>
                 <Paper className="paper" elevation={1}>
                     <Grid spacing={4} container justify="center" >
-                        {state.products.productList.map((product, index) => {
-                            if (product.category === state.categories.activatedCategory) {
-                                console.log('From cart', state.cart.cartItems.inStock, 'From static', product.inStock);
+                        {state.products.allProducts.map((product, index) => {
+                            if (product.category === state.products.activeProduct) {
                                 return (
 
                                     <Grid item key={index}>
                                         <Card>
                                             <CardHeader title={product.name} />
                                             <CardMedia
-                                                image={product.image}
+                                                image='https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif'
                                                 style={{ height: 0, paddingTop: '50%' }}
                                                 title='title'
                                             />
