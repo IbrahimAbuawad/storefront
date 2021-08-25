@@ -14,7 +14,6 @@ function SimpleCart() {
     const state = useSelector(state => state)
 
     const dispatch = useDispatch()
-
     return (
 
         <div class='Simplecart' >
@@ -31,7 +30,7 @@ function SimpleCart() {
                                         primary={items.name}
                                     />
 
-                                    <IconButton onClick={() => dispatch(removeFromCart(items._id))} edge="end" aria-label="delete">
+                                    <IconButton onClick={() => dispatch(removeFromCart(items._id,items.inStock))} edge="end" aria-label="delete">
                                         <DeleteIcon />
                                     </IconButton>
                                 </ListItem>

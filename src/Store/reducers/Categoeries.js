@@ -1,25 +1,31 @@
 const initialState = {
-    categoryList: [
-      { _id: 98765, name: 'Electronics', description: 'Category Description Goes Here' },
-      { _id: 12345, name: 'Food', description: 'Category Description Goes Here' }
-    ],
-    activatedCategory: '',
-    activatedDescription: '',
+  // categoryList: [
+  //   { _id: 98765, name: 'electronics', description: 'Category Description Goes Here' },
+  //   { _id: 12345, name: 'food', description: 'Category Description Goes Here' }
+  // ],
+  
+  categories: []
+}
+
+
+export default function reducer(state = initialState, action) {
+  const { type, payload } = action;
+
+  switch (type) {
+    case 'INACTIVE':
+      return initialState;
+
+    
+
+    case 'GET_CATE':
+      const categories = payload // [{},{},{}]
+      return {categories : categories};
+
+    default:
+      return state;
   }
-  
-  export default function reducer(state = initialState, action) {
-    const { type, payload } = action;
-  
-    switch (type) {
-      case 'INACTIVE':
-        return initialState;
-      case 'ACTIVE':
-        return { ...state, activatedCategory: payload.category, activatedDescription: payload.description }
-      default:
-        return state;
-    }
-  }
-  
+}
+
 
 
 

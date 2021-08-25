@@ -1,3 +1,4 @@
+
 export const addToCart = (product_id,product_name,product_inStock) => {
     return {
       type: 'ADD_TO_CART',
@@ -5,9 +6,16 @@ export const addToCart = (product_id,product_name,product_inStock) => {
     }
   }
   
-  export const removeFromCart = (product_id) => {
+  export const removeFromCart = (product_id,product_inStock) => {
     return {
       type: "REMOVE_FROM_CART",
-      payload:{product_id}
+      payload:{product_id,product_inStock}
     }
   }
+
+  
+
+
+
+
+  

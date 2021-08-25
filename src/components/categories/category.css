@@ -1,0 +1,9 @@
+#addItem{
+color: red;
+border-color: red;
+position: relative;
+left: 40%;
+}
+#addItem:hover{
+    background-color: rgba(255, 0, 0, 0.062);
+}
